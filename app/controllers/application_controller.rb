@@ -11,4 +11,14 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  get '/icecreams/new' do
+    erb :new_ice_cream
+  end  
+
+  post '/icecreams' do 
+
+  end  
+
+
+
 end
