@@ -8,4 +8,6 @@
   <label for="toppings">Choose toppings: </label>
   <input name="toppings" type="text"> <br>
   <input type="submit" value="Create Ice Cream">
+  <%=@ice_cream.errors.full_messages.join if @ice_cream%>
+
 </form>

@@ -16,8 +16,18 @@ class ApplicationController < Sinatra::Base
   end  
 
   post '/icecreams' do 
-
+    @ice_cream = IceCream.new(params)
+    if @ice_cream.save 
+      redirect "icecreams/#{@ice_cream.id}"
+    else
+      erb :new_ice_cream
+    end
   end  
+
+  get '/icecreams/:id' do 
+    @ice_cream = IceCream.find(params[:id])
+    erb :show
+  end
 
 
 
